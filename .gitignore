@@ -1,0 +1,21 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+
+# Generated model artifacts & reports
+models/*.joblib
+models/*.pkl
+reports/
+synthetic/
+
+# Data too large for git hosting
+data/CASIA V2/
+
+# Editor / OS
+.vscode/
+.idea/
+Thumbs.db
+.DS_Store

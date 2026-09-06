@@ -1,0 +1,28 @@
+# IFD configuration: the single source of truth for paths and training data.
+# Every relative path here is resolved against the repository root, so the
+# scripts behave the same from any working directory. Command-line flags
+# (--out, --dataset-root, ...) still override these defaults per run.
+#
+# Edit this file to point the project at a different dataset/models folder
+# instead of touching script code.
+
+[training]
+# Known-authentic real photos added to training as label=0 samples.
+# Set to "" to disable (train only on the synthetic mix).
+authentic = "data/authentic"
+# Real labeled dataset root (CASIA v2 / Columbia) fed into training.
+# Set to "" to leave it out.
+casia = ""
+# Mix synthetic mixed-history pairs in when `casia` is configured.
+keep_synthetic = true
+
+[paths]
+# Output directory for trained models (train_blocks --out default).
+models = "models"
+# Output directory for demo HTML reports (demo --out default).
+reports = "reports"
+# Output directory for synthetic pairs (make_synthetic --out default).
+synthetic = "synthetic"
+# Held-out verification probes (known authentic). Used by the docs and
+# training sanity checks, not by the trained model itself.
+probes = ["test.jpg", "test2.jpg"]
